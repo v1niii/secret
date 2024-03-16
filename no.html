@@ -1,30 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>yay!</title>
-    <link rel="stylesheet" href="yesno_styles.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"rel="stylesheet"/>
-  </head>
-  <body>
-    <div class="container">
-      <div>
-        <h1 class="header_text"></h1>
-      </div>
-      <div class="gif_container">
-        <img src="https://media1.tenor.com/m/Z9mXH7-MlcsAAAAd/sexy-black-man-thirst-trap.gif" alt="yay!" />
-      </div>
-      <script>
-        $(document).ready(()=>{
-          $.getJSON("https://api.ipify.org?format=json",
-          function (data) {
-              $("#header_text").html(data.ip);
-          })
-      });
-      </script>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>yay!</title>
+  <link rel="stylesheet" href="yesno_styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <div>
+      <h1 class="header_text"></h1>
     </div>
-  </body>
+    <div class="gif_container">
+      <img src="https://media1.tenor.com/m/Z9mXH7-MlcsAAAAd/sexy-black-man-thirst-trap.gif" alt="yay!" />
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(() => {
+        $.getJSON("https://api.ipify.org?format=json", function (data) {
+          $(".header_text").text(data.ip);
+        });
+      });
+    </script>
+  </div>
+</body>
 </html>
